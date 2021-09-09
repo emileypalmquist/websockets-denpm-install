@@ -4,6 +4,6 @@ WebSocket API docs - https://developer.mozilla.org/en-US/docs/Web/API/WebSockets
 
 ### Tomorrow we will cover:
 
-- [ ] unsubscribe
+- [ :heavy_check_mark ] unsubscribe
 - [ ] direct_messages
 - [ ] Action Cable frontend (if time permits)
