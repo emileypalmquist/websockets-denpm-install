@@ -16,6 +16,11 @@ class MessageChannel < ApplicationCable::Channel
     ActionCable.server.broadcast("message_channel", {type: "new_message", new_message: new_message})
   end
 
+  def alert_unsubscribed(data)
+    ActionCable.server.broadcast("message_channel", {type: "user_left", user_id: data["user_id"]})
+  end
+
   def unsubscribed
+    stop_stream_from "message_channel"
   end
 end

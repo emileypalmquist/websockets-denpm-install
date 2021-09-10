@@ -5,7 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-messages = ["hello", "how are you?", "great"]
-messages.each do |m|
-  Message.create(content: m)
-end
+# messages = ["hello", "how are you?", "great"]
+# messages.each do |m|
+#   Message.create(content: m)
+# end
+User.destroy_all
+DirectMessage.destroy_all
+user1 = User.create(username: 'friend a')
+user2 = User.create(username: 'friend b')
+user3 = User.create(username: 'friend c')
+puts "finished users"
+direct_message1 = DirectMessage.create(user_a_id: user1.id, user_b_id: user2.id)
+direct_message2 = DirectMessage.create(user_a_id: user3.id, user_b_id: user1.id)
